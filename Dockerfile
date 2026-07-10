@@ -2,6 +2,13 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# System build dependencies (needed for psycopg2, cryptography, bcrypt etc.)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    libpq-dev \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN pip install uv
 
 COPY requirement.txt .
