@@ -11,8 +11,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # model setup
-# llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
-llm = ChatMistralAI(model="mistral-small-2506", temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+# llm = ChatMistralAI(model="mistral-small-2506", temperature=0.1)
 
 
 # 1 agent
